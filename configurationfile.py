@@ -1,6 +1,6 @@
 from appium import webdriver
 
-### comment
+
 
 app_name = 'app-debug.apk'
 # zmienna lokalna, do podmiany
