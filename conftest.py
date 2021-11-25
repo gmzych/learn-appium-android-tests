@@ -1,5 +1,6 @@
 import pytest
 from appium import webdriver
+from pages.main_page import MainPage
 #pytest rozpoznaje plik pod nazwą conftest jako plik setupowy
 
 #fixture - klasa która powoduje że mój driver działa w obrębie wszystkich klas
@@ -16,8 +17,9 @@ def driver(request):
     desired_caps['newCommandTimeout'] = 120
 
     request.cls.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
-    request.cls.driver.implicitly_wait(30)
+    request.cls.main_page = MainPage(request.cls.driver)
     return driver
+
 
 
 
